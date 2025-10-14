@@ -1,16 +1,10 @@
 # Sistema de Gestión Hospitalaria con JPA/Hibernate (JpaHospital)
 
-Alumno: Franco D'Agostino
-
-Comisión: 3k9
-
-Legajo: 47761
-
 `JpaHospital` es un sistema integral de gestión hospitalaria desarrollado en Java.  
 Este proyecto demuestra la implementación de conceptos avanzados de persistencia de datos utilizando **JPA (Jakarta Persistence API)** y **Hibernate ORM**.  
 El sistema modela digitalmente la operación de un hospital, incluyendo la gestión de pacientes, médicos, departamentos, citas e historias clínicas, con un fuerte enfoque en la integridad de los datos y las reglas de negocio del dominio médico.
 
-## 🏗️ Arquitectura y Patrones de Diseño
+##  Arquitectura y Patrones de Diseño
 
 La arquitectura del sistema sigue los principios de **Domain-Driven Design (DDD)** para manejar la complejidad del dominio hospitalario. Se han implementado varios patrones de diseño clave:
 
@@ -20,7 +14,7 @@ La arquitectura del sistema sigue los principios de **Domain-Driven Design (DDD)
 - **SuperBuilder Pattern**: Utilizado en la jerarquía de `Persona` para permitir la construcción fluida de objetos complejos con herencia, gracias a la anotación `@SuperBuilder` de Lombok.  
 - **Service Layer**: La lógica de negocio compleja, como la validación de citas, se encapsula en la capa de servicio (`CitaService` / `CitaManager`) para separar responsabilidades.
 
-## 🏥 Modelo de Dominio
+##  Modelo de Dominio
 
 - **`Persona`**: Superclase abstracta (`@MappedSuperclass`) que contiene datos comunes como DNI, nombre y tipo de sangre.  
 - **`Medico`**: Hereda de `Persona` y añade una `Matricula` (`@Embedded`) y una especialidad, manteniendo una relación con un `Departamento`.  
@@ -30,7 +24,7 @@ La arquitectura del sistema sigue los principios de **Domain-Driven Design (DDD)
 - **`HistoriaClinica`**: Contiene el historial médico del paciente, utilizando `@ElementCollection` para gestionar listas de diagnósticos, tratamientos y alergias.  
 - **`Cita`**: Entidad que vincula a un `Paciente`, un `Medico` y una `Sala` en una fecha y hora específicas.
 
-## ⚙️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 - **Lenguaje**: Java 17+  
 - **Persistencia**: Jakarta Persistence API (JPA) 3.1.0  
@@ -39,7 +33,7 @@ La arquitectura del sistema sigue los principios de **Domain-Driven Design (DDD)
 - **Utilidades**: Project Lombok 1.18.42  
 - **Build Tool**: Gradle 8.x
 
-## 📋 Reglas de Negocio Críticas
+##  Reglas de Negocio Críticas
 
 - **Validación de DNI**: Formato de 7 a 8 dígitos numéricos y único en el sistema.  
 - **Validación de Matrícula Profesional**: Formato "MP-" seguido de 4 a 6 dígitos.  
@@ -49,7 +43,7 @@ La arquitectura del sistema sigue los principios de **Domain-Driven Design (DDD)
   - La especialidad del médico debe coincidir con la del departamento de la sala.  
   - Se requiere un **búfer de 2 horas** entre citas para el mismo médico y sala.
 
-## 🚀 Cómo Empezar
+##  Cómo Empezar
 
 ### Prerrequisitos
 
@@ -135,7 +129,7 @@ try {
 
 -----
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```plaintext
 JpaHospital/
